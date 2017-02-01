@@ -10,6 +10,7 @@ excerpt_separator: "\n\n\n"
 title : ConfuserEx-Reborn
 description: ConfuserEx is an open-source protector for .NET applications.
 repo : "https://github.com/CubeCoders/ConfuserEx-Reborn"
+download: "https://ci.appveyor.com/project/PhonicUK/confuserex-reborn"
 author:
   name: Ki
   email: contact@cubecoders.com
