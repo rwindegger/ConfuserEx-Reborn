@@ -3,8 +3,8 @@ layout: page
 ---
 {% include setup %}
 
-ConfuserEx is an free, open-source protector for .NET applications.
-It is the successor of [Confuser](http://confuser.codeplex.com) project.
+ConfuserEx-reborn is an free, open-source protector for .NET applications.
+It is the successor of [ConfuserEx](https://github.com/yck1509/ConfuserEx) project.
 
 ---
 <div class="row">
@@ -68,9 +68,7 @@ It supports most of the protections you'll find in commerical protectors, and so
 Downloads
 ---------
 You could obtain the latest source code at the [GitHub project page](https://github.com/CubeCoders/ConfuserEx-Reborn).
-<!---
-You may find the bleeding edge builds at [the CI Server](https://ci.appveyor.com/project/yck1509/confuserex).
---->
+You may find the bleeding edge builds at [the CI Server](https://ci.appveyor.com/project/PhonicUK/confuserex-reborn/build/artifacts).
 ConfuserEx requires only .NET Framework 3.5 to run.
 It might be helpful to read the [FAQ]({{ BASE_PATH }}/faq/)!
 
