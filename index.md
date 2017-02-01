@@ -67,8 +67,10 @@ It supports most of the protections you'll find in commerical protectors, and so
 
 Downloads
 ---------
-You could obtain the latest source code and releases at [GitHub project page](https://github.com/yck1509/ConfuserEx/releases).
+You could obtain the latest source code at the [GitHub project page](https://github.com/CubeCoders/ConfuserEx-Reborn).
+<!---
 You may find the bleeding edge builds at [the CI Server](https://ci.appveyor.com/project/yck1509/confuserex).
+--->
 ConfuserEx requires only .NET Framework 3.5 to run.
 It might be helpful to read the [FAQ]({{ BASE_PATH }}/faq/)!
 
@@ -84,8 +86,6 @@ You could also contribute to the project by creating pull requests and [reportin
 
 Donation
 ---------
-If you find ConfuserEx is useful to you, feel free to support the project by making a donation!  
+If you find ConfuserEx-Reborn is useful to you, feel free to support the project by making a donation!  
 
-<a href='https://pledgie.com/campaigns/25451'><img alt='Click here to lend your support to: ConfuserEx --- an open-source .NET protector and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/25451.png?skin_name=chrome' border='0' ></a>  
-`BTC : 12wzXhmMtjhn9dEFXdtoVAFwSx3MmV4Afx`  
-`DOGE: DM8NpgvQhzPKcdca6AbSxPiV9QCcix9BYJ`
+`BTC : 1MeTCVfek99Sar5hceuibYFjiLDuY3JhJ5`  
