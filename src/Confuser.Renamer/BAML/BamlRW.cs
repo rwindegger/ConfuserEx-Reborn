@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 
 namespace Confuser.Renamer.BAML {
-	internal class BamlBinaryReader : BinaryReader {
+	public class BamlBinaryReader : BinaryReader {
 		public BamlBinaryReader(Stream stream)
 			: base(stream) { }
 
@@ -13,7 +13,7 @@ namespace Confuser.Renamer.BAML {
 		}
 	}
 
-	internal class BamlBinaryWriter : BinaryWriter {
+	public class BamlBinaryWriter : BinaryWriter {
 		public BamlBinaryWriter(Stream stream)
 			: base(stream) { }
 
