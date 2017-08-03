@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26724.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnlib", "src\dnlib\dnlib.csproj", "{6319D78A-552C-485B-9857-D8DF9D485AD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Core", "src\Confuser.Core\Confuser.Core.csproj", "{22CB0AF0-47E9-467C-B871-A2BBFA6C871A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.DynCipher", "src\Confuser.DynCipher\Confuser.DynCipher.csproj", "{FCFA15F1-BAAA-410C-A8C3-6CC3085A99B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Runtime", "src\Confuser.Runtime\Confuser.Runtime.csproj", "{62F6B23B-96EE-4BE5-93B5-F35D0823CA34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Renamer", "src\Confuser.Renamer\Confuser.Renamer.csproj", "{8EEA580F-DDAD-4549-8939-1896068E0CF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Protections", "src\Confuser.Protections\Confuser.Protections.csproj", "{5C3C976E-213F-4831-A107-F792EF768649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.CLI", "src\Confuser.CLI\Confuser.CLI.csproj", "{E8ED9FBF-1E03-4516-BC6C-D11516D10F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6319D78A-552C-485B-9857-D8DF9D485AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6319D78A-552C-485B-9857-D8DF9D485AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6319D78A-552C-485B-9857-D8DF9D485AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6319D78A-552C-485B-9857-D8DF9D485AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CB0AF0-47E9-467C-B871-A2BBFA6C871A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CB0AF0-47E9-467C-B871-A2BBFA6C871A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CB0AF0-47E9-467C-B871-A2BBFA6C871A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CB0AF0-47E9-467C-B871-A2BBFA6C871A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFA15F1-BAAA-410C-A8C3-6CC3085A99B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFA15F1-BAAA-410C-A8C3-6CC3085A99B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFA15F1-BAAA-410C-A8C3-6CC3085A99B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFA15F1-BAAA-410C-A8C3-6CC3085A99B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F6B23B-96EE-4BE5-93B5-F35D0823CA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F6B23B-96EE-4BE5-93B5-F35D0823CA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F6B23B-96EE-4BE5-93B5-F35D0823CA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F6B23B-96EE-4BE5-93B5-F35D0823CA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEA580F-DDAD-4549-8939-1896068E0CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEA580F-DDAD-4549-8939-1896068E0CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEA580F-DDAD-4549-8939-1896068E0CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEA580F-DDAD-4549-8939-1896068E0CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3C976E-213F-4831-A107-F792EF768649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3C976E-213F-4831-A107-F792EF768649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3C976E-213F-4831-A107-F792EF768649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3C976E-213F-4831-A107-F792EF768649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ED9FBF-1E03-4516-BC6C-D11516D10F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ED9FBF-1E03-4516-BC6C-D11516D10F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ED9FBF-1E03-4516-BC6C-D11516D10F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ED9FBF-1E03-4516-BC6C-D11516D10F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB9FE629-C2CC-4BA2-B34E-63ABA1D329BF}
+	EndGlobalSection
+EndGlobal

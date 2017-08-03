@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Confuser.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\WORK\\Bossland\\Buddy.ClashRoyale\\src\\Buddy.Engine\\Confuser\\Confuse.crproj"
+    }
+  }
+}
