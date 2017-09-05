@@ -22,7 +22,7 @@ namespace Confuser.Renamer.BAML {
 		}
 	}
 
-	internal class BamlReader {
+	public class BamlReader {
 		public static BamlDocument ReadDocument(Stream str) {
 			var ret = new BamlDocument();
 			var reader = new BamlBinaryReader(str);
@@ -222,8 +222,8 @@ namespace Confuser.Renamer.BAML {
 			return ret;
 		}
 	}
-
-	internal class BamlWriter {
+	
+	public class BamlWriter {
 		public static void WriteDocument(BamlDocument doc, Stream str) {
 			var writer = new BamlBinaryWriter(str);
 			{
