@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -397,9 +398,7 @@ namespace dnlib.DotNet
 
 		AssemblyDef Resolve2(IAssembly assembly, ModuleDef sourceModule)
 		{
-			AssemblyDef resolvedAssembly;
-
-			if (cachedAssemblies.TryGetValue(GetAssemblyNameKey(assembly), out resolvedAssembly))
+		    if (cachedAssemblies.TryGetValue(GetAssemblyNameKey(assembly), out var resolvedAssembly))
 				return resolvedAssembly;
 
 			var moduleContext = defaultModuleContext;

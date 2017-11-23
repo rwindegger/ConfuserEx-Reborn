@@ -53,7 +53,7 @@ namespace Confuser.Protections.ControlFlow {
 		static bool DisabledOptimization(ModuleDef module) {
 			bool disableOpti = false;
 			CustomAttribute debugAttr = module.Assembly.CustomAttributes.Find("System.Diagnostics.DebuggableAttribute");
-			if (debugAttr != null) {
+			if (debugAttr != null && debugAttr.ConstructorArguments.Count != 0) {
 				if (debugAttr.ConstructorArguments.Count == 1)
 					disableOpti |= ((DebuggableAttribute.DebuggingModes)(int)debugAttr.ConstructorArguments[0].Value & DebuggableAttribute.DebuggingModes.DisableOptimizations) != 0;
 				else

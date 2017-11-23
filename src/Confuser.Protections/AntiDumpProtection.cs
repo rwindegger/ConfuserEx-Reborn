@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETCOREAPP2_0
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Confuser.Core;
@@ -74,3 +75,4 @@ namespace Confuser.Protections {
 		}
 	}
 }
+#endif

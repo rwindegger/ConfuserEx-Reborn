@@ -32,12 +32,13 @@ namespace Confuser.Core {
 
 		static ConfuserEngine() {
 			Assembly assembly = typeof(ConfuserEngine).Assembly;
-			var nameAttr = (ProductAttribute)assembly.GetCustomAttributes(typeof(ProductAttribute), false)[0];
-			var verAttr = (InformationalAttribute)assembly.GetCustomAttributes(typeof(InformationalAttribute), false)[0];
-			var cpAttr = (CopyrightAttribute)assembly.GetCustomAttributes(typeof(CopyrightAttribute), false)[0];
-			Version = string.Format("{0} {1}", nameAttr.Product, verAttr.InformationalVersion);
-			VersionNumber = verAttr.InformationalVersion;
-			Copyright = cpAttr.Copyright;
+		    
+            var nameAttr = assembly.GetCustomAttributes(typeof(ProductAttribute), false).OfType<ProductAttribute>().FirstOrDefault(); ;
+			var verAttr = assembly.GetCustomAttributes(typeof(InformationalAttribute), false).OfType<InformationalAttribute>().FirstOrDefault();
+			var cpAttr = assembly.GetCustomAttributes(typeof(CopyrightAttribute), false).OfType<CopyrightAttribute>().FirstOrDefault();
+			Version = string.Format("{0} {1}", nameAttr?.Product, verAttr?.InformationalVersion);
+			VersionNumber = verAttr?.InformationalVersion;
+			Copyright = cpAttr?.Copyright;
 
 			AppDomain.CurrentDomain.AssemblyResolve += (sender, e) => {
 				try {
@@ -88,16 +89,28 @@ namespace Confuser.Core {
 			bool ok = false;
 			try {
 				var asmResolver = new AssemblyResolver();
-				asmResolver.FindExactMatch = true;
+				asmResolver.FindExactMatch = false;
+			    asmResolver.EnableFrameworkRedirect = false;
 				asmResolver.EnableTypeDefCache = true;
 				asmResolver.DefaultModuleContext = new ModuleContext(asmResolver);
 				context.Resolver = asmResolver;
 				context.BaseDirectory = Path.Combine(Environment.CurrentDirectory, parameters.Project.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);
-				context.OutputDirectory = Path.Combine(parameters.Project.BaseDirectory, parameters.Project.OutputDirectory.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);
-				foreach (string probePath in parameters.Project.ProbePaths)
+			    if (Path.IsPathRooted(parameters.Project.OutputDirectory))
+			    {
+			        context.OutputDirectory = Path.Combine(parameters.Project.BaseDirectory,
+			            parameters.Project.OutputDirectory.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);
+			    }
+			    else
+			    {
+			        context.OutputDirectory = parameters.Project.OutputDirectory;
+			    }
+			    foreach (string probePath in parameters.Project.ProbePaths)
 					asmResolver.PostSearchPaths.Insert(0, Path.Combine(context.BaseDirectory, probePath));
 
-				context.CheckCancellation();
+                //asmResolver.PreSearchPaths.Insert(0, @"C:\Program Files\dotnet\sdk\2.1.1-preview-007118");
+                //asmResolver.PostSearchPaths.Insert(0, @"C:\Program Files\dotnet\sdk\2.1.1-preview-007118");
+
+                context.CheckCancellation();
 
 				Marker marker = parameters.GetMarker();
 
@@ -507,7 +520,7 @@ namespace Confuser.Core {
 				yield return "v4.5 " + releaseKey;
 			}
 #else
-			yield break;
+		    yield return "netcoreapp";
 #endif
 		}
 
@@ -530,11 +543,11 @@ namespace Confuser.Core {
 			if (context.Resolver != null) {
 				context.Logger.Error("Cached assemblies:");
 				foreach (AssemblyDef asm in context.Resolver.GetCachedAssemblies()) {
-					if (string.IsNullOrEmpty(asm.ManifestModule.Location))
-						context.Logger.ErrorFormat("    {0}", asm.FullName);
+					if (string.IsNullOrEmpty(asm?.ManifestModule?.Location))
+						context.Logger.ErrorFormat("    {0}", asm?.FullName);
 					else
-						context.Logger.ErrorFormat("    {0} ({1})", asm.FullName, asm.ManifestModule.Location);
-					foreach (var reference in asm.Modules.OfType<ModuleDefMD>().SelectMany(m => m.GetAssemblyRefs()))
+						context.Logger.ErrorFormat("    {0} ({1})", asm?.FullName, asm?.ManifestModule?.Location);
+					foreach (var reference in asm?.Modules?.OfType<ModuleDefMD>()?.SelectMany(m => m?.GetAssemblyRefs()))
 						context.Logger.ErrorFormat("        {0}", reference.FullName);
 				}
 			}
